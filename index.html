@@ -42,8 +42,11 @@
     function doConvert (){
     let numberInput = document.querySelector('#numberInput').value ;
     let myDiv = document.querySelector('#result');
-
-    let oneToTwenty = ['','one ','two ','three ','four ', 'five ','six ','seven ','eight ','nine ','ten ',
+    if (numberInput<0){
+        myDiv.innerHTML="Enter a valid positive integer"
+    }
+    else{
+        let oneToTwenty = ['','one ','two ','three ','four ', 'five ','six ','seven ','eight ','nine ','ten ',
     'eleven ','twelve ','thirteen ','fourteen ','fifteen ','sixteen ','seventeen ','eighteen ','nineteen '];
     let tenth = ['', '', 'twenty','thirty','forty','fifty', 'sixty','seventy','eighty','ninety'];
 
@@ -62,6 +65,8 @@
     outputText +=num[5] != 0 ? (oneToTwenty[Number(num[5])] || `${tenth[num[5][0]]} ${oneToTwenty[num[5][1]]} `) : ''; 
 
     myDiv.innerHTML = outputText;
+
+    }   
 }
 </script>
 </html>
